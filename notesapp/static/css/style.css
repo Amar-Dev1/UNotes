@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+.note {
+    overflow: hidden;
+    box-shadow: 5px 5px 10px #666;
+    min-width: 350px;
+    min-height: 200px;
+    position: relative;
+    transition: .4s all ease-in-out;
+}
+
+.note:hover {
+    transform: scale(1.03);
+}
+
+.note svg,
+.note svg {
+    cursor: pointer;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+}
+
+.note .note-content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 10px 0;
+}
+
+.note .note-date {
+    font-size: 12px;
+    /* position: absolute; */
+    bottom: 10px;
+}
+
+#liked {
+    display: none;
+}
+
+nav {
+    box-shadow: 5px 5px 5px #666;
+}
+
+header a {
+    transition: all .2s ease-in-out;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+header a:hover {
+    transform: scale(1.11);
+    background-color: #444;
+
+}
+
+.back {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    border-radius: 0 20px 20px 0;
+}
+
+.note-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    min-height: 60%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 10;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #ddd;
+}
+
+.note-details .note-title {
+    position: relative;
+}
+
+.note-details .note-title::before {
+    content: '';
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 2;
+}
+
+.note-details .note-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.behind-text {
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 62px;
+}
+
+.note-details .note-content {
+    background-color: white;
+    box-shadow: 5px 5px 10px #ddd;
+}
+
+.note-details .note-content p {
+    font-size: 18px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+}
+
+form {
+    box-shadow: 5px 5px 10px #ddd;
+}
+
+form label {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+form a{
+    display: inline-block;
+    width: 150px;
+    
+}
+
+@media (max-width:500px) {
+    .note-details {
+        width: 80%;
+    }
+
+    .note-details .note-content p {
+        font-size: 14px;
+    }
+
+}

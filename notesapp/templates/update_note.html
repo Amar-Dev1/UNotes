@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="">🖋 Eidt <span class="">{{note.title}}</span></h2>
+<form method="POST">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit"class="btn btn-warning">Save Note</button>
+    <a href="{% url 'home' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

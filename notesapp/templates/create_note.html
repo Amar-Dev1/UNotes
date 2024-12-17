@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="text-center fs-1">{{ title }} 📝</h1>
+<a href="{% url 'home' %}" class="back bg-dark text-light p-3 px-4">Home</a>
+
+<form method="POST" class="w-100 rounded d-flex justify-content-center flex-column text-center">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" class="btn btn-primary" value="Create">
+</form>
+{% endblock %}

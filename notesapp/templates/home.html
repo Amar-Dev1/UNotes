@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row d-flex justify-content-center align-items-center p-3">
+        {% for note in notes %}
+        <div
+            class="note col-sm-12 col-md-6 col-lg-3 bg-dark text-light m-1 p-3 rounded d-flex flex-column justfy-content-around">
+            <h3 class="note-title">{{note.title}}</h3>
+            <p class="note-content w-80 fs-4 fw-normal">{{note.content}}</p>
+            <div class="btns">
+                <a href="{% url 'read_note' note.id %}" class="btn btn-primary more">more details...</a>
+                <a href="{% url 'delete_note' note.id %}" class="btn btn-danger delete">Delete</a>
+                <a href="{% url 'update_note' note.id %}" class="btn btn-warning update">update</a>
+            </div>
+            <span class="note-date mt-3"><span>🔵</span>{{note.created_at}}</span>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
